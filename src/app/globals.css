@@ -90,3 +90,31 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.item-avatar {
+  transition: all 200ms;
+}
+
+.item-avatar:hover {
+  scale: 1.9;
+}
+
+.item-avatar:hover + * {
+  scale: 1.5;
+  transform: translateX(10px);
+}
+
+.item-avatar:has(+ *:hover) {
+  scale: 1.5;
+  transform: translateX(-10px);
+}
+
+.item-avatar:hover + * + * {
+  scale: 1.2;
+  transform: translateX(5px);
+}
+
+.item-avatar:has(+ * + *:hover) {
+  scale: 1.2;
+  transform: translateX(-5px);
+}
